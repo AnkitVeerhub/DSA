@@ -1,7 +1,18 @@
 '''
 Monotonic Stack (Hard)
+🎯 Interview Importance:
+This is a high-frequency problem asked by:
+💼 Company: Amazon,Google,Microsoft,Adobe,Samsung,Flipkart,Qualcomm,VMWare
+💻 Platforms:
+✅ LeetCode: Problem #84 - Largest Rectangle in Histogram
 
+✅ GeeksforGeeks: Appears under Monotonic Stack and Histogram based problems.
+
+✅ Codeforces: Variants of this problem appear in contests.
+
+✅ InterviewBit and Coding Ninjas: Frequently practiced.
 '''
+# Brute force approach
 def histogram(heights):
     n = len(heights)
     max_area = 0
@@ -20,6 +31,13 @@ def histogram(heights):
     return max_area
 heights = [6,2,5,4,5,1,6]
 print(histogram(heights))
+'''
+📊 Time Complexity:
+Outer loop → O(n)
+
+Each expansion can go O(n) in worst case →
+Total: O(n²)
+'''
 
 # Optimal Approach
 def largestRectangleArea(heights):
@@ -41,3 +59,10 @@ def largestRectangleArea(heights):
 # Example input
 heights = [6, 2, 5, 4, 5, 1, 6]
 print("Max Rectangle Area:", largestRectangleArea(heights))
+
+'''
+📊 Time and Space Complexity:
+Time: O(n) → Each bar is pushed and popped at most once
+
+Space: O(n) → Stack space in worst case
+'''

@@ -22,7 +22,7 @@ class Solution:
     # @param A : string
     # @return a string
     def solve(self, A):
-        chars = list(A)        # Convert string to list
+        chars = list(A)     # Convert string to list
         left, right = 0, len(chars) - 1
         
         # Reverse the list in-place using two pointers
@@ -32,6 +32,9 @@ class Solution:
             right -= 1
         
         return ''.join(chars)  # Join list back to string
+sol = Solution()
+A = "Aman"
+print(sol.solve(A))
 '''
 🧠 Interview Tip:
 If asked why not use A[::-1], explain that it’s Pythonic and concise 
@@ -47,4 +50,3 @@ Say:
 “We can do it recursively or with Pythonic slicing — though 
 recursion can be inefficient and slicing might be considered a shortcut.”
 '''
-
