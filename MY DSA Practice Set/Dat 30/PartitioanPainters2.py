@@ -86,6 +86,14 @@ Painters can paint only contiguous sections of boards.
 Goal: Minimize the time taken by the painter with the maximum workload.
 '''
 
+'''
+⏱️ Time & Space Complexity
+Time: Exponential — O(2^N) in worst case
+(trying all partitions recursively)
+
+Space: O(N) — recursion stack
+'''
+
 # Brute Force Approach
 def find_min_time_bruteforce(boards, k):
     def helper(index, k):
@@ -103,3 +111,34 @@ def find_min_time_bruteforce(boards, k):
 boards = [10, 20, 30, 40]
 k = 2
 print("Minimum time (Brute Force):", find_min_time_bruteforce(boards, k))
+
+# Optimal Approach
+'''
+⏱️ Time & Space Complexity
+Metric	Value	Why?
+Time:	O(N log S)	where N = boards.length, S = sum - max range
+Space:	O(1) because Constant extra space
+'''
+def find_min_time(boards, k):
+    def canPaint(max_time):
+        painter_count, current_time = 1, 0
+        for length in boards:
+            if current_time + length > max_time:
+                painter_count += 1
+                current_time = length
+            else:
+                current_time += length
+        return painter_count <= k
+    low, high = max(boards), sum(boards)
+    answer = high
+    while(low <= high):
+        mid = (low + high)//2
+        if canPaint(mid):
+            answer = mid
+            high = mid - 1
+        else:
+            low = mid + 1
+    return answer
+boards = [10, 20, 30, 40]
+k = 2
+print("Minimum time (Brute Force):", find_min_time(boards, k))

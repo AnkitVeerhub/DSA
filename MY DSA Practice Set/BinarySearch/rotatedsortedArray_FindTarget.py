@@ -28,37 +28,40 @@ def bruteforce_Search_Target(A, B):
     N = len(A)
     for i in range(N):
         if A[i] == B:
-            return A[i]
+            return i
     return -1
-print(bruteforce_Search_Target([ 9, 10, 3, 5, 6, 8 ], 5))
+print(bruteforce_Search_Target([9, 10, 3, 5, 6, 8], 5))
 
 def search_rotated_target_element(A, B):
     for i in range(len(A)):
-            return A[i]
+        if A[i] == B:
+            return i
     return -1
 print(search_rotated_target_element([4, 5, 6, 7, 0, 1, 2, 3], 4))
-    
-# Optimal Approach
+
+# ✅ Optimal Approach
 def search_rotated_sorted_array(A, B):
     left , right = 0, len(A) - 1
     while left <= right:
-        mid = (left+(right - left))//2
+        mid = (left + right) // 2
         if A[mid] == B:
             return mid
-        # left half is sorted
+        # Left half is sorted
         if A[left] <= A[mid]:
             if A[left] <= B < A[mid]:
                 right = mid - 1
             else:
                 left = mid + 1
-        # right half is sorted
+        # Right half is sorted
         else:
             if A[mid] < B <= A[right]:
                 left = mid + 1
             else:
                 right = mid - 1
     return -1
-print(search_rotated_sorted_array([4, 5, 6, 7, 0, 1, 2, 3], 4))
+
+# ✅ Test Case
+print(search_rotated_sorted_array([4, 5, 6, 7, 0, 1, 2, 3], 0))  # Expected output: 4
 
 def search_rotated_sorted_array(A, B):
     left , right = 0, len(A) - 1
@@ -77,4 +80,4 @@ def search_rotated_sorted_array(A, B):
             else:
                 right = mid - 1
     return -1
-print(search_rotated_sorted_array([4, 5, 6, 7, 0, 1, 2, 3], 4))
+print(search_rotated_sorted_array([4, 5, 6, 7, 0, 1, 2, 3], 2))

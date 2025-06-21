@@ -81,3 +81,8 @@ print(min_stack.getMin())  # 2
 print(min_stack.top())     # 2
 min_stack.pop()
 print(min_stack.getMin())  # 3
+
+n = 2
+for i in range(n):
+    for j in range(i + 1):
+        print(i + j, "hy")

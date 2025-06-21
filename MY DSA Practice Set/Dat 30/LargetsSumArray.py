@@ -76,9 +76,8 @@ def splitArray(nums: list[int], k: int) -> int:
     return answer
 
 # Define the input
-nums = [7, 2, 5, 10, 8]
-k = 2
-
+nums = [7, -2, 5, 10, 8]
+k = len(nums)
 
 # Call the method
 print(splitArray(nums, k))
