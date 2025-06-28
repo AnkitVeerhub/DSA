@@ -10,6 +10,8 @@ This repository contains my solutions to various Data Structures and Algorithms 
 - Linked List
 - Strings
 - Heap / Greedy (coming soon)
+- Dynamic Programming
+- Trees and Graphs
 
 ### 🚀 How I Use This Repo:
 - Preparing for interviews (Salesforce, Google, etc.)

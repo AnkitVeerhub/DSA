@@ -54,3 +54,27 @@ def Longest_Consecuting_Sequence(A):
     return longest
 A = [100,2,3,4,300,1,0]
 print(Longest_Consecuting_Sequence(A))
+
+
+# Pr1:
+def longestConsecutive(nums):
+    # Using hashset to skipping the duplicates values and constant time lookup
+    num_set = set(nums)
+    longest_streak = 0
+    # starting of for loop
+    for num in nums:
+        current_num = num
+        if num - 1 not in num_set:
+            current_num = num
+            current_streak = 1
+            while current_num + 1 in num_set:
+                current_num += 1
+                current_streak += 1
+            longest_streak = max(longest_streak, current_streak)
+    return longest_streak
+nums = [100, 2, 3, 4, 200, 1]
+print(longestConsecutive(nums))
+
+            
+
+
