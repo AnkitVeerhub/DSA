@@ -45,5 +45,5 @@ def longest_substring_optimal(A):
         seen.add(A[end])
         max_length = max(max_length, end - start + 1)
     return max_length
-A = "abcabcbbabc"
+A = "abcbbcbbabc"
 print(longest_substring_optimal(A))

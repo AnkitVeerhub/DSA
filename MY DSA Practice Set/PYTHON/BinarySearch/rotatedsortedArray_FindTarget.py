@@ -3,7 +3,7 @@ Given a sorted array of integer A of size N and an integer B,
 Where array A is rotated at some certain pivot unknown beforehand
 for example : the array [0,1,2,3,4,5,6,7] might become [4,5,6,7,0,1,2].
 
-your task is to search for the target value B n the array.
+your task is to search for the target value B in the array.
 If found, return it's index; otherwise return -1.
 
 You can assume that no duplicates exist in the array.
@@ -14,7 +14,7 @@ Input 1:
 A = [4, 5, 6, 7, 0, 1, 2, 3]
 B = 4 
 Input 2:
-A : [ 9, 10, 3, 5, 6, 8 ]
+A : [9, 10, 3, 5, 6, 8 ]
 B : 5
 
 Example Output
