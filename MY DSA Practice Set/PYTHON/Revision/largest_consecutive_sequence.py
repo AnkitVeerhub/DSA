@@ -39,7 +39,6 @@ def Largest_Consecutive_Sequence_Optimal(nums):
     return max_length
 print(Largest_Consecutive_Sequence_Optimal([100,2,3,4,200,1]))
 
-
 '''
 ✅ Optimized Steps – Longest Consecutive Sequence (Optimal Approach)
 1. Put all elements in a set
@@ -95,6 +94,18 @@ print(longestConsecutive(nums))
 
 
 
-            
-
-
+def longest_consecutive_sequence(arr):
+    longest = 0
+    num_set = set(arr)
+    for num in num_set:
+        current_num = num
+        if current_num - 1 not in num_set:
+            current_num = 1
+            streak = 1
+            while current_num + 1 in num_set:
+                current_num += 1
+                streak += 1
+            longest = max(longest, streak)
+    return longest
+arr = [100,2,3,4,200,1]
+print(longest_consecutive_sequence(arr))

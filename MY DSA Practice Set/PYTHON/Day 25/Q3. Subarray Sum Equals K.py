@@ -31,8 +31,8 @@ class Solution:
                 prefix_map[prefix_sum] = 1
 
         return count
-A = [1, 0, 1]
-B = 1
+A = [1,2,3]
+B = 5
 sol = Solution()
 print(sol.solve(A, B))
 

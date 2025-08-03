@@ -5,8 +5,7 @@
 
 🔍 Problem Statement (Simplified)
 Given an integer array nums, find the contiguous subarray 
-(containing at least one number)
-which has the largest sum and return its sum.
+(containing at least one number) which has the largest sum and return its sum.
 
 A = [1,2,3,4] , output: 10
 '''
@@ -34,7 +33,7 @@ def max_subarray_sum_brute(A):
             max_sum = max(max_sum, curr_sum) 
     return max_sum
 # Test
-print(max_subarray_sum_brute([1,2,3,4]))  # Output: 10
+print(max_subarray_sum_brute([2,1,5,1,3,2]))  # Output: 10
 
 # Optimal Approach
 # Time Complexity: O(N)

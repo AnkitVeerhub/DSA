@@ -12,11 +12,9 @@ class Solution:
         min_price = float('inf')
         max_profit = 0
         for price in prices:
-            if price < min_price:
-                min_price = price # Buy Here
-            else:
-                profit = price - min_price # Sell Here
-                max_profit = max(max_profit, profit)
+            min_price = min(min_price, price) # Buy Here
+            profit = price - min_price # Sell Here
+            max_profit = max(max_profit, profit)
         return max_profit
 
 sol = Solution()
